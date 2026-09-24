@@ -20,10 +20,6 @@ export function AuthProvider({ children }) {
         body: JSON.stringify(newUser),
       });
 
-      if (!req.ok) {
-        throw new Error("Signup Failed.");
-      }
-
       const res = await req.json();
       setToken(res.token);
       setMessage(res.message);
